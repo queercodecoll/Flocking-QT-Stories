@@ -1,20 +1,22 @@
 body {
-  background-color: rgb(238)
+  background-color: rgb(0)
   width: 90%;
   margin: 0 auto;}
   #content {overflow: auto;}
+  h1{
+    color:blue;}
+  }
   #title {
-    margin: 1%
-    text-align: center;}
+    margin: 1%}
   #canvasDiv {
     margin: 1%;}
-  #column1 {
-    width: 49.95%;
+  #UI_column1, #UI_column2 {
+    width: 49.945%;
     float: left;
     margin: 1%;}
-  #column2 {
-    width: 49.95%;
+  #UI_column2 {
+    width: 49.45%;
     float: right;
-    margin: 0%;}
+    margin-right: 0%;}
   p {
     margin: 1%}
