@@ -1,14 +1,15 @@
 body {
   background-color: rgb(216, 216, 216);
-  width: 99%;
-  font-family: Arial, Helvetica, sans-serif;}
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;}
   #header {
-    margin: 1%}
-  #content {overflow:auto}
+    margin: 1%;}
+  #content {overflow:auto;}
   h2{
     color: rgb(65, 105, 220);
     font-family: Arial Black;
-    text-align: center}
+    text-align: center;}
   #title {}
   #canvasDiv {
     display: flex;
@@ -18,10 +19,10 @@ body {
   #UI_Container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center}
+    justify-content: center;}
   #UI_column1, #UI_column2 {
     width: 300px;
     flex-wrap: wrap;
     float: left;}
   p {
-    margin: 1%}
+    margin: 1%;}
