@@ -61,13 +61,13 @@ function createGUI(){
   //Slider; number of normatives
   //Slider parameters; min value = 0, max value = 2, starting value = 1, step = 0 for contiunous
   divSlider = createDiv();
-  divSlider.parent(divControls);
+  divSlider.parent(divLbl);
   sldNumNorms = createSlider(0, 2, 1, 0); //Works as multiplier to generate number of norm boids
   sldNumNorms.parent(divSlider);
   sldNumNorms.style('width', '275px');    //Set width of slider;
   divSlider.style('background-color', '#B0B');
   divSlider.size(278,25);
-  divSlider.style('border-style', 'solid');
+  //divSlider.style('border-style', 'solid');
   //guiElements.push(sldNumNorms);
 
   //Button div
