@@ -80,9 +80,9 @@ function createGUI(){
   //Legend; norm boid, non boid, norm inst, non inst, harm line, support line
   //createDiv and create Img
   divLegend = select('#UI_column2');
-  imgLegend = createImg('assets/boidLegend.png', 'legend');
+  imgLegend = createImg('images/boidLegend.png', 'legend');
   imgLegend.parent(divLegend);
-  imgLegend.size(250,250);
+  imgLegend.size(300,300);
 
   //Instructions
   //createP for a paragraph

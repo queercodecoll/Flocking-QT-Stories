@@ -1,10 +1,10 @@
 body {
-  background-color:
+  background-color: rgb(216, 216, 216);
   width: 90%;
   margin: 0 auto;}
   #content {overflow:auto}
   h1{
-    color:blue;
+    color: rgb(65, 105, 220);
     text-align: center;}
   }
   #title {
@@ -12,7 +12,7 @@ body {
   #canvasDiv {
     margin: 1%;}
   #UI_column1, #UI_column2 {
-    width: 500px;
+    width: 300px;
     flex-wrap: wrap;
     float: left;
     margin: 1%;}
