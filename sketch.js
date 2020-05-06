@@ -85,7 +85,9 @@ function draw() {
   displaySubtitles(activeStory);      //Update the subtitles
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
   if(frameCount % 300 == 0){selectFollowBoid();} //Select a boid to follow every n frames
-  drawInvite();                       //Draw an invite near the followed boid
+  if(activeStory == null || (activeStory != null && !activeStory.isPlaying)) {
+    drawInvite();                     //Draw an invite near the followed boid
+  }                                   //Only if the story is not playing
 //End draw
 }
 //----------------------------------------------------------------------------
@@ -234,7 +236,6 @@ function drawInvite(){
   stroke(200);
   strokeWeight(2);
   triangle(followOffset + position.x - 2, position.y -2 + 5, followOffset + position.x -2, position.y + 13 +5, followOffset + position.x + 13, position.y-2 + 5);
-
 }
 //----------------------------------------------------------------------------
 //Select a Q boid to follow
