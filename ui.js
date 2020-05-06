@@ -35,12 +35,12 @@ function createGUI(){
 
   //Slider; number of normatives
   //createSlider, createDiv for label
-  sldNumNorms = createSlider(0, startQBoids*objStories.length*2, startNBoids, 1);
+  sldNumNorms = createSlider(0, startQBoids*2, startNBoids, 1);
   sldNumNorms.position(15, cbxInteractions.y + cbxInteractions.height + 10);
   sldNumNorms.style('width', '250px');
   //sldNumNorms.changed(sldNumNormsChanged);
 
-  lblNumNorms = createP("Normative to Non-normative = " + startNBoids + " : " + startQBoids*objStories.length)
+  lblNumNorms = createP("Normative Boids to Non-normative Boids = " + startNBoids + " : " + startQBoid)
   lblNumNorms.position(15, sldNumNorms.y + sldNumNorms.height - 10);
   lblNumNorms.size(300, 20);
 

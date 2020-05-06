@@ -30,10 +30,10 @@ let fft; //Container for Fast Fourier Tansform for audio analysis
 let cnv; //Container for the canvas
 
 //Define canvas sizes
-const smlCanvas = 304;
+const smlCanvas = 320;
 const medCanvas = 720;
 const lrgCanvas = 960;
-const canvasHeight = 540;
+const canvasHeight = 320;
 
 //----------------------------------------------------------------------------
 //Before showing page
@@ -61,9 +61,8 @@ function setup() {
   normColour = color(255);
   nonColour = color(255,0,255);
 
-  frameRate(30);  //Set frame rate. Set to 30 to limit processing power needed
-
-
+  //Set frame rate. Set to 30 to limit processing power needed
+  frameRate(30);
 
   //Sound analysis setup
   fft = new p5.FFT();
@@ -153,7 +152,9 @@ function loadCanvas(){
   for(let i = 0; i < maxMult; i++){
     let bounds = (i*interval) + smlCanvas; //determine the boundary for this interval (starting with smallest)
     if(width > bounds){
-      numBoidsMult = i+1;
+      numBoidsMult = i+1; //Set the multiplier to a value of 1 to maxMult
+                          //Starting with lowest value allows loop to find
+                          //the largest multiplier for this interval/boundary
     }
   }
 
@@ -163,15 +164,13 @@ function loadCanvas(){
   startNInst = 3 * numBoidsMult;                         //Number of normative institutions
   startQInst = 3 * numBoidsMult;                         //Number of non-normative institutions
 
-  numNBoids = 0;                          //Current number of normative boids
-
   //Add Q boids
   //Find the closest integer multiple of the number of stories
     //-creates multiple boids for each story
     //Note: startQBoids but be >= number of stories
-  startQBoids = floor(startQBoids/objStories.length); //Determine # of boids per story
+  let n = floor(startQBoids/objStories.length); //Determine # of boids per story
   for(let j = 0; j<objStories.length; j++){ //For each story..
-    for(let i=0; i<startQBoids; i++){ //For each number of multiples of that story...
+    for(let i=0; i<n; i++){ //For each number of multiples of that story...
       let x = random(0,width);
       let y = random(0,height);
       flock.add(boidType.NON, objStories[j]); //Add a new non-normative boid to the flock
