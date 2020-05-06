@@ -11,11 +11,11 @@ const guiElements = [];
 //----------------------------------------------------------------------------
 function createGUI(){
   //title "QT Flocking Stories"
-  //createElement('h1')
-//  title = createElement('h1', 'Flocking QT Stories');
-  //title.position(20,0);
-  //title.size(300, 60);
-  //guiElements.push(title);
+  createElement('h1')
+  title = createElement('h1', 'Flocking QT Stories');
+  title.position(20,0);
+  title.size(300, 60);
+  guiElements.push(title);
 
   //subtitles
   txtSubtitles = createP("");
