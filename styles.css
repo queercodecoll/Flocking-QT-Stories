@@ -18,6 +18,9 @@ body {
     justify-content: center;
   }
   #UI_Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 1%}
   #UI_column1, #UI_column2 {
     width: 300px;
