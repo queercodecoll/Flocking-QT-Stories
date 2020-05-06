@@ -11,12 +11,9 @@ body {
   #canvasDiv {
     margin: 1%;}
   #UI_column1, #UI_column2 {
-    width: 49.945%;
+    width: 45%;
     float: left;
     margin: 1%;}
-  #UI_column2 {
-    width: 49.45%;
-    float: right;
-    margin-right: 0%;}
+  #UI_column2 {margin-right: 0%;}
   p {
     margin: 1%}
