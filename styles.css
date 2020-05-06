@@ -3,21 +3,18 @@ body {
   width: 90%;
   margin: 0 auto;}
   #content {overflow: auto;}
-  #title{
+  #title {
     margin: 1%
-    text-align: center;
-  }
-  #canvasDiv, .Instructions {
+    text-align: center;}
+  #canvasDiv {
     margin: 1%;}
-  .column1 {
+  #column1 {
     width: 49.95%;
     float: left;
     margin: 1%;}
-  .column2 {
+  #column2 {
     width: 49.95%;
     float: right;
     margin: 0%;}
-  }
-  }
-  }
-}
+  p {
+    margin: 1%}
