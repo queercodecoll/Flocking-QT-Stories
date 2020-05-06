@@ -84,10 +84,8 @@ function draw() {
   flock.process();                    //Run the flock (which in turn runs the boids)
   displaySubtitles(activeStory);      //Update the subtitles
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
-  text(frameRate(), 5,10);
-  //line(canvasSize/2, 0, canvasSize/2, height);  //Draw midpoint line for measuring
-  if(frameCount % 300 == 0){selectFollowBoid();}
-  drawInvite();
+  if(frameCount % 300 == 0){selectFollowBoid();} //Select a boid to follow every n frames
+  drawInvite();                       //Draw an invite near the followed boid
 //End draw
 }
 //----------------------------------------------------------------------------
