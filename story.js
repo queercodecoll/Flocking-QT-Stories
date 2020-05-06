@@ -110,7 +110,6 @@ function displaySubtitles(story){
 
       //Display text
       fill(0);
-      //stroke(0);
       textAlign(CENTER, TOP);
       textSize(14);
       text(strSpeaker + "\n" + subtitle, pos.x, pos.y + 5,
