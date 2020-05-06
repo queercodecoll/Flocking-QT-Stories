@@ -12,7 +12,7 @@ body {
   #title {
     margin: 1%}
   #canvasDiv {
-    margin: 1%;}
+    margin: 0%;}
   #UI_column1, #UI_column2 {
     width: 300px;
     flex-wrap: wrap;
