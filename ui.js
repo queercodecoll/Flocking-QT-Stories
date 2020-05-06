@@ -11,19 +11,12 @@ var txtInstructions;
 //----------------------------------------------------------------------------
 function createGUI(){
   //title "QT Flocking Stories"
-<<<<<<< HEAD
+
   //createElement('h1')
   title = select('#title');
-  title.position(20,0);
-  title.size(300, 60);
-  guiElements.push(title);
-=======
-  createElement('h1')
-  title = createElement('h1', 'Flocking QT Stories');
-  title.position(20,0);
-  title.size(300, 60);
-  guiElements.push(title);
->>>>>>> 7fd1d58607c65ba2b937d954df276237c881e950
+  //title.position(20,0);
+  //title.size(300, 60);
+  //guiElements.push(title);
 
   //subtitles
   /* Moved to canvas
