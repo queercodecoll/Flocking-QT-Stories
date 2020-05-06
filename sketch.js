@@ -150,7 +150,7 @@ function windowResized(){
 
   //Number of normative boids may have changed. Update slider value.
   sldNumNorms.value(1);
-  updateGUIPositions();
+  //updateGUIPositions();
 }
 //----------------------------------------------------------------------------
 function loadCanvas(){
