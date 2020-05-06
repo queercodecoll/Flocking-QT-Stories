@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(238)
+  width: 90%;
+  margin: 0 auto;}
+  #content {overflow: auto;}
+  #title{
+    margin: 1%
+    text-align: center;
+  }
+  #canvasDiv, .Instructions {
+    margin: 1%;}
+  .column1 {
+    width: 49.95%;
+    float: left;
+    margin: 1%;}
+  .column2 {
+    width: 49.95%;
+    float: right;
+    margin: 0%;}
+  }
+  }
+  }
+}
