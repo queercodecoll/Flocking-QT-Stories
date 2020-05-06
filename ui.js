@@ -4,7 +4,7 @@ var txtSubtitles;
 var lblNBoid, lblQBoid, lblNInst, lblQInst, lblHarm, lblSupport;
 var imgNBoid, imgQBoid, imgNInst, imgQInst, imgHarm, imgSupport;
 var cbxInteractions;
-var sldNumNorms, lblNumNorms;
+var sldNumNorms, lblNumNorms, lblRatio;
 var btnNext, btnPrev;
 var txtInstructions;
 //const guiElements = [];
@@ -38,24 +38,37 @@ function createGUI(){
   cbxInteractions = createCheckbox('Show Interactions',true);
   cbxInteractions.changed(cbxIntClicked);
   cbxInteractions.parent(divControls);
+  cbxInteractions.size(200, 40);
   //cbxInteractions.position(15, txtSubtitles.y + txtSubtitles.height + 10);
   //cbxInteractions.size(150,25);
   //guiElements.push(txtSubtitles);
 
 
-  //Slider; number of normatives
-  //Slider parameters; min value = 0, max value = 2, starting value = 1, step = 0 for contiunous
-  sldNumNorms = createSlider(0, 2, 1, 0); //Works as multiplier to generate number of norm boids
-  sldNumNorms.parent(divControls);
-  //sldNumNorms.style('width', '250px');    //Set width of slider;
-  //sldNumNorms.position(15, cbxInteractions.y + cbxInteractions.height + 10);
-  //guiElements.push(sldNumNorms);
+  divLbl = createDiv();
+  divLbl.parent(divControls);
+  lblRatio = createP("Boid Ratio");
+  lblRatio.parent(divLbl);
+  lblRatio.style('font', 'bold');
 
   lblNumNorms = createP("Normative to Non-normative = " + startNBoids + " : " + startQBoids*objStories.length)
-  lblNumNorms.parent(divControls);
-  //lblNumNorms.position(15, sldNumNorms.y + sldNumNorms.height - 10);
+  lblNumNorms.parent(divLbl);
   //lblNumNorms.size(300, 20);
   //guiElements.push(lblNumNorms);
+
+  divLbl.size(278);
+  divLbl.style('border-style', 'solid');
+
+  //Slider; number of normatives
+  //Slider parameters; min value = 0, max value = 2, starting value = 1, step = 0 for contiunous
+  divSlider = createDiv();
+  divSlider.parent(divControls);
+  sldNumNorms = createSlider(0, 2, 1, 0); //Works as multiplier to generate number of norm boids
+  sldNumNorms.parent(divSlider);
+  sldNumNorms.style('width', '275px');    //Set width of slider;
+  divSlider.style('background-color', '#B0B');
+  divSlider.size(278,25);
+  divSlider.style('border-style', 'solid');
+  //guiElements.push(sldNumNorms);
 
   //Button div
   divButtons = createDiv();
