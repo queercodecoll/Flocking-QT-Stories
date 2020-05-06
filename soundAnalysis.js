@@ -1,3 +1,7 @@
+/*Functions used to analyze sound.
+  Used in determining force multipliers for cohesion, separation and alignment.
+*/
+
 //Return a vector of the average amplitudes of "low", "med" and "high" frequencies
 function getAmplitudes(){
   //Only use frequencies in the vocal range (100-2000 Hz)
@@ -6,7 +10,7 @@ function getAmplitudes(){
   let med2_freq = 1000; // partition between med and high ranges
   let max_freq = 2000; //Max frequency to analaze
 
-  
+  //Run Fast Fourier Transform spectrum analysis
   let spectrum = fft.analyze();
 
   //getEnergy gives amplitude of the frequency rangep; value is 0-255
@@ -14,6 +18,7 @@ function getAmplitudes(){
   let med = fft.getEnergy(med1_freq, med2_freq);
   let high = fft.getEnergy(med2_freq, max_freq);
 
-  //Return a vector of the amplitudes
+  //Return a vector containing the amplitudes
   return createVector(low,med,high);
+//End getAmplitudes
 }

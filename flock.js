@@ -43,10 +43,11 @@ class Flock {
 
   //---------------------------------------------------------------------------
   //Remove a normative boid from this flock
+  //Intended for use with a slider to change the number of normative boids
   remove(){
     //If there is at least 1 normative boid
     if(this.numNBoids > 0){
-      //Find the first boid in the list
+      //Find the first normative boid in the list
       for(let i=0; i<this.boidList.length; i++){
         if(this.boidList[i].bType === boidType.NORM){
           this.boidList.splice(i,1); //Delete the boid from the list
@@ -58,11 +59,8 @@ class Flock {
   }
   //---------------------------------------------------------------------------
   //Run the flock; Analysis sound, set multipliers, run each boid in flocking
-  /*Parameters
-      audio: the audio file to be analyzed
-  */
-  process(audio){
-    //Analyze sound
+  process(){
+    //Analyze sound currently playing to determine force multipliers
     //Check if activeStory has been set, and that it's playing
     if(activeStory != null && activeStory.isPlaying()){
       let amplitudes = getAmplitudes(); //get the amplitudes (0-255) of the frequency ranges (low, med, hi)
