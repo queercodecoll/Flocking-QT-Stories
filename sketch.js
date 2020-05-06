@@ -142,14 +142,18 @@ function windowResized(){
   //Resize the canvas to fit the window (within min and max values)
   let canvasWidth = constrain(windowWidth, minWidth, maxWidth);
   let canvasHeight = map(canvasWidth, minWidth, maxWidth, minHeight, maxHeight);
-  resizeCanvas(canvasWidth, canvasHeight);
 
-  //Reload boid world (canvas)
-  loadCanvas();
+  if(windowWidth != cnv.width){ //If the width has changed
+                                //Intended to prevent phone scrolling triggering a resize event
+    resizeCanvas(canvasWidth, canvasHeight);
 
-  //Number of normative boids may have changed. Update slider value.
-  sldNumNorms.value(1);
-  //updateGUIPositions();
+    //Reload boid world (canvas)
+    loadCanvas();
+
+    //Number of normative boids may have changed. Update slider value.
+    sldNumNorms.value(1);
+    //updateGUIPositions();
+  }
 }
 //----------------------------------------------------------------------------
 function loadCanvas(){
