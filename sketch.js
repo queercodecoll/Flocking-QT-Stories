@@ -221,13 +221,19 @@ function drawInvite(){
   fill(255,175);
   let followOffset = 10;
   let position = followBoid.position;
-  let size = createVector(100, 60);
+  let size = createVector(105, 50);
+  rectMode(CORNER);
   rect(followOffset + position.x, position.y, size.x, size.y);
   textSize(12);
   textAlign(CENTER, CENTER);
   fill(200, 0, 200);
   stroke(150, 0, 150);
-  text("TAP THIS COLOR BOID TO HERE ITS STORY", followOffset + position.x, position.y, size.x, size.y);
+  text("TAP THIS BOID TO HERE ITS STORY", followOffset + position.x, position.y, size.x, size.y);
+  fill(100);
+  stroke(200);
+  strokeWeight(2);
+  triangle(followOffset + position.x - 2, position.y -2, followOffset + position.x -2, position.y + 13, followOffset + position.x + 13, position.y-2);
+
 }
 //----------------------------------------------------------------------------
 //Select a Q boid to follow
