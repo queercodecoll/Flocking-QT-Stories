@@ -12,7 +12,8 @@ body {
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;}
-  #title {}
+  #title {
+    padding-bottom: 1;}
   #canvasDiv {
     display: flex;
     align-items: center;
@@ -21,10 +22,12 @@ body {
   #UI_Container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;}
+    justify-content: center;
+    margin: 1%;}
   #UI_column1, #UI_column2 {
     width: 300px;
     flex-wrap: wrap;
-    float: left;}
+    float: left;
+    margin: 1.5%;}
   p {
     margin: 1%;}
