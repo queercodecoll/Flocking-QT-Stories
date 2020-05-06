@@ -84,10 +84,10 @@ function draw() {
   flock.process();                    //Run the flock (which in turn runs the boids)
   displaySubtitles(activeStory);      //Update the subtitles
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
-  text(frameRate(), 5,10);
-  //line(canvasSize/2, 0, canvasSize/2, height);  //Draw midpoint line for measuring
-  if(frameCount % 300 == 0){selectFollowBoid();}
-  drawInvite();
+  if(frameCount % 300 == 0){selectFollowBoid();} //Select a boid to follow every n frames
+  if(activeStory == null || (activeStory != null && !activeStory.isPlaying)) {
+    drawInvite();                     //Draw an invite near the followed boid
+  }                                   //Only if the story is not playing
 //End draw
 }
 //----------------------------------------------------------------------------
@@ -236,7 +236,6 @@ function drawInvite(){
   stroke(200);
   strokeWeight(2);
   triangle(followOffset + position.x - 2, position.y -2 + 5, followOffset + position.x -2, position.y + 13 +5, followOffset + position.x + 13, position.y-2 + 5);
-
 }
 //----------------------------------------------------------------------------
 //Select a Q boid to follow

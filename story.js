@@ -92,7 +92,7 @@ class Story {
 function displaySubtitles(story){
   if(story != null){  //Check that story exists
     if(story.isPlaying()){ //Check that it's playing
-      let textboxSize = createVector(300,60);
+      let textboxSize = createVector(300,65);
       let pos = createVector(width/2, height-textboxSize.y/2 - 10);
 
       //Draw subtitle background
@@ -111,7 +111,7 @@ function displaySubtitles(story){
       //Display text
       fill(0);
       stroke(0);
-      textAlign(CENTER);
+      textAlign(CENTER, TOP);
       text(strSpeaker + "\n" + subtitle, pos.x, pos.y + 5,
       textboxSize.x, textboxSize.y);
     }

@@ -65,7 +65,7 @@ function createGUI(){
   sldNumNorms = createSlider(0, 2, 1, 0); //Works as multiplier to generate number of norm boids
   sldNumNorms.parent(divSlider);
   sldNumNorms.style('width', '275px');    //Set width of slider;
-  divSlider.style('background-color', '#B0B');
+  divSlider.style('background-color', '#000');
   divSlider.size(278,25);
   //divSlider.style('border-style', 'solid');
   //guiElements.push(sldNumNorms);
