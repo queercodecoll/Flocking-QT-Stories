@@ -13,8 +13,13 @@ body {
     text-align: center;
     margin-top: 0;
     margin-bottom: 0;}
-  #title {
-    padding-bottom: 1;}
+  h3{
+    color: black;
+    font-family: Arial;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   #canvasDiv {
     display: flex;
     align-items: center;
@@ -30,5 +35,17 @@ body {
     flex-wrap: wrap;
     float: left;
     margin: 1.5%;}
-  p {
+  #longTextContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 1%;}
+  #longText {
+    max-width: 500px;
+    margin: 1.5%;
+  }
+  li {
+    margin: 10px 0px 0px 0px;}
+  p {
+    margin: 1%;
+  }
