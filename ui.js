@@ -38,6 +38,7 @@ function createGUI(){
   cbxInteractions.changed(cbxIntClicked);
   cbxInteractions.parent(divControls);
   cbxInteractions.size(200, 40);
+  cbxInteractions.style('margin', '5%');
   //cbxInteractions.position(15, txtSubtitles.y + txtSubtitles.height + 10);
   //cbxInteractions.size(150,25);
   //guiElements.push(txtSubtitles);
