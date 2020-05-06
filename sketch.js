@@ -143,7 +143,7 @@ function windowResized(){
   let canvasWidth = constrain(windowWidth, minWidth, maxWidth);
   let canvasHeight = map(canvasWidth, minWidth, maxWidth, minHeight, maxHeight);
 
-  if(windowWidth != cnv.width){ //If the width has changed
+  if(canvasWidth != cnv.width){ //If the width has changed
                                 //Intended to prevent phone scrolling triggering a resize event
     resizeCanvas(canvasWidth, canvasHeight);
 
