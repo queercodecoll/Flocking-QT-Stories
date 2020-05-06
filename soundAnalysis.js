@@ -6,11 +6,14 @@ function getAmplitudes(){
   let med2_freq = 1000; // partition between med and high ranges
   let max_freq = 2000; //Max frequency to analaze
 
+  
   let spectrum = fft.analyze();
+
   //getEnergy gives amplitude of the frequency rangep; value is 0-255
   let low = fft.getEnergy(min_freq, med1_freq);
   let med = fft.getEnergy(med1_freq, med2_freq);
   let high = fft.getEnergy(med2_freq, max_freq);
 
+  //Return a vector of the amplitudes
   return createVector(low,med,high);
 }

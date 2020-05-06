@@ -110,15 +110,9 @@ function displaySubtitles(story){
 
       //Display text
       fill(0);
-      //stroke(0);
       textAlign(CENTER, TOP);
       textSize(14);
-      text(strSpeaker + "\n" + subtitle, pos.x, pos.y + 5,
-      textboxSize.x, textboxSize.y);
-    }
-    //If story finished or was stopped, reset the subtitles to blank
-    else{
-
+      text(strSpeaker + "\n" + subtitle, pos.x, pos.y + 5, textboxSize.x, textboxSize.y);
     }
   }
 //End displaySubtitles
