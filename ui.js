@@ -82,6 +82,7 @@ function createGUI(){
   divLegend = select('#UI_column2');
   imgLegend = createImg('assets/boidLegend.png', 'legend');
   imgLegend.parent(divLegend);
+  imgLegend.size(250,250);
 
   //Instructions
   //createP for a paragraph
