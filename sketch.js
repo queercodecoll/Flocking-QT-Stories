@@ -1,9 +1,4 @@
-/*FLOCKING QT STORIES
-©The Flocking QT Stories code by ________ is licensed under a Creative Commons
-Attribution-NonCommercial-ShareAlike 4.0 International License.
-The Processing implementation of the standard (non-frequency based) flocking algorithm
-was created by Daniel Shiffman based upon Craig Reynold's Boids program.
-*/
+/*FLOCKING QT STORIES*/
 
 let flock; //Container for the flock
 var institutions = []; //Container for all institutions
