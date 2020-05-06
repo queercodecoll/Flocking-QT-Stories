@@ -92,21 +92,32 @@ class Story {
 function displaySubtitles(story){
   if(story != null){  //Check that story exists
     if(story.isPlaying()){ //Check that it's playing
-      //Display speaker
-      let string = "Speaker: " + story.text[0] + "<br/>";
+      let textboxSize = createVector(300,60);
+      let pos = createVector(width/2, height-textboxSize.y/2 - 10);
 
-      //Display pronouns
-      string += "Pronouns: " + story.text[1] + "<br/>";
+      //Draw subtitle background
+      fill(200);
+      stroke(200);
+      strokeWeight(1);
+      rectMode(CENTER);
+      rect(pos.x, pos.y, textboxSize.x, textboxSize.y);
 
-      //Display subtitle
-      string += story.getCurrentSubtitle();
+      //Get speaker & pronouns
+      let strSpeaker = "Speaker: " + story.name;
 
-      //Update the DOM text (found in ui.js)
-      updateSubtitles(string);
+      //Get subtitle
+      let subtitle= story.getCurrentSubtitle();
+
+      //Display text
+      fill(0);
+      stroke(0);
+      textAlign(CENTER);
+      text(strSpeaker + "\n" + subtitle, pos.x, pos.y + 5,
+      textboxSize.x, textboxSize.y);
     }
     //If story finished or was stopped, reset the subtitles to blank
     else{
-      updateSubtitles("");
+
     }
   }
 //End displaySubtitles

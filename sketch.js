@@ -86,6 +86,7 @@ function draw() {
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
   text(frameRate(), 5,10);
   //line(canvasSize/2, 0, canvasSize/2, height);  //Draw midpoint line for measuring
+
 //End draw
 }
 //----------------------------------------------------------------------------

@@ -14,13 +14,13 @@ function createGUI(){
   //createElement('h1')
   title = createElement('h1', 'Flocking QT Stories');
   title.position(20,0);
-  //title.size(300, 25);
+  title.size(300, 60);
   guiElements.push(title);
 
   //subtitles
   txtSubtitles = createP("");
   txtSubtitles.position(20, cnv.y + cnv.height + 10);
-  txtSubtitles.size(220, 100);
+  txtSubtitles.size(300, 100);
   guiElements.push(txtSubtitles);
 
   //Legend; norm boid, non boid, norm inst, non inst, harm line, support line
