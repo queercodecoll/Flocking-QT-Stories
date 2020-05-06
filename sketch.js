@@ -57,8 +57,7 @@ function setup() {
   cnv = createCanvas(canvasWidth, canvasHeight);
   //cnv = createCanvas(canvasSize.x, canvasSize.y);     //Create the canvas
   cnv.mouseClicked(canvasClicked);  //set callback function for when canvas is clicked
-  cnv.position(0,60);               //set canvas position
-
+  //cnv.position(0,60);               //set canvas position
   //Define colours
   normColour = color(255);
   nonColour = color(255,0,255);

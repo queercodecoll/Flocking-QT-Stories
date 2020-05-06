@@ -18,6 +18,10 @@ function createGUI(){
   //title.size(300, 60);
   //guiElements.push(title);
 
+  //Set up canvas Div
+  divCanvas = select('#canvasDiv');
+  cnv.parent(divCanvas);
+
   //subtitles
   /* Moved to canvas
   txtSubtitles = createP("");
