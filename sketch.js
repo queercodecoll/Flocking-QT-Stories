@@ -33,7 +33,7 @@ let cnv; //Container for the canvas
 const smlCanvas = 304;
 const medCanvas = 720;
 const lrgCanvas = 960;
-const canvasHeight = 540;
+const canvasHeight = 320;
 
 //----------------------------------------------------------------------------
 //Before showing page
