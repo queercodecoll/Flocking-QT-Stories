@@ -21,7 +21,6 @@ function createGUI(){
   //Set up canvas Div
   divCanvas = select('#canvasDiv');
   cnv.parent(divCanvas);
-
   //subtitles
   /* Moved to canvas
   txtSubtitles = createP("");
@@ -79,6 +78,8 @@ function createGUI(){
   btnPrev = createButton("Prev Story");
   btnPrev.mousePressed(btnPrevClicked);
   btnPrev.parent(divButtons);
+  btnPrev.size(100, 25);
+  btnPrev.style('margin', '5%');
   //btnPrev.position(15, lblNumNorms.y + lblNumNorms.height + 30);
   //btnPrev.size(80,25);
   //guiElements.push(btnPrev);
@@ -86,6 +87,8 @@ function createGUI(){
   btnNext = createButton("Next Story");
   btnNext.mousePressed(btnNextClicked);
   btnNext.parent(divButtons);
+  btnNext.size(100,25);
+  btnNext.style('margin', '5%');
   //btnNext.position(btnPrev.x + btnPrev.width + 10, lblNumNorms.y + lblNumNorms.height + 30);
   //btnNext.size(80,25);
   //guiElements.push(btnNext);
