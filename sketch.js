@@ -29,11 +29,11 @@ let startNBoids, numNBoids, startQBoids, startNInst, startQInst, numBoidsMult;
 let fft; //Container for Fast Fourier Tansform for audio analysis
 let cnv; //Container for the canvas
 
-//Define canvas sizes
-const smlCanvas = 304;
-const medCanvas = 720;
-const lrgCanvas = 960;
-const canvasHeight = 320;
+//Define max/min canvas sizes
+const minWidth = 320;
+const maxWidth = 960;
+const minHeight = 320;
+const maxHeight = 540;
 
 //----------------------------------------------------------------------------
 //Before showing page
@@ -52,7 +52,9 @@ function preload(){
 //----------------------------------------------------------------------------
 //before first draw
 function setup() {
-  cnv = createCanvas(constrain(windowWidth, smlCanvas, lrgCanvas), canvasHeight);
+  let canvasWidth = constrain(windowWidth, minWidth, maxWidth);
+  let canvasHeight = map(canvasWidth, minWidth, maxWidth, minHeight, maxHeight);
+  cnv = createCanvas(canvasWidth, canvasHeight);
   //cnv = createCanvas(canvasSize.x, canvasSize.y);     //Create the canvas
   cnv.mouseClicked(canvasClicked);  //set callback function for when canvas is clicked
   cnv.position(0,60);               //set canvas position
@@ -138,13 +140,16 @@ function getNearestQBoid(point){
 //----------------------------------------------------------------------------
 function windowResized(){
   //Resize the canvas to fit the window (within min and max values)
-  resizeCanvas(constrain(windowWidth, smlCanvas, lrgCanvas), canvasHeight);
+  let canvasWidth = constrain(windowWidth, minWidth, maxWidth);
+  let canvasHeight = map(canvasWidth, minWidth, maxWidth, minHeight, maxHeight);
+  resizeCanvas(canvasWidth, canvasHeight);
 
   //Reload boid world (canvas)
   loadCanvas();
 
   //Number of normative boids may have changed. Update slider value.
   sldNumNorms.value(1);
+  updateGUIPositions();
 }
 //----------------------------------------------------------------------------
 function loadCanvas(){
@@ -153,9 +158,9 @@ function loadCanvas(){
 
   //Set number of boids per story dependant on canvas size
   let maxMult = 4;  //Set number of boids per story at maximum canvas size
-  let interval = (lrgCanvas-smlCanvas) / (maxMult); //determine interval sizes
+  let interval = (maxWidth-minWidth) / (maxMult); //determine interval sizes
   for(let i = 0; i < maxMult; i++){
-    let bounds = (i*interval) + smlCanvas; //determine the boundary for this interval (starting with smallest)
+    let bounds = (i*interval) + minWidth; //determine the boundary for this interval (starting with smallest)
     if(width > bounds){
       numBoidsMult = i+1; //Set the multiplier to a value of 1 to maxMult
                           //Starting with lowest value allows loop to find

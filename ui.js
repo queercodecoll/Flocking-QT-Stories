@@ -7,19 +7,21 @@ var cbxInteractions;
 var sldNumNorms, lblNumNorms;
 var btnNext, btnPrev;
 var txtInstructions;
-
+const guiElements = [];
 //----------------------------------------------------------------------------
 function createGUI(){
   //title "QT Flocking Stories"
   //createElement('h1')
   title = createElement('h1', 'Flocking QT Stories');
   title.position(20,0);
-  title.size(300, 25);
+  //title.size(300, 25);
+  guiElements.push(title);
 
   //subtitles
   txtSubtitles = createP("");
   txtSubtitles.position(20, cnv.y + cnv.height + 10);
-  txtSubtitles.size(400, 100);
+  txtSubtitles.size(220, 100);
+  guiElements.push(txtSubtitles);
 
   //Legend; norm boid, non boid, norm inst, non inst, harm line, support line
   //createDiv and create Img
@@ -30,17 +32,19 @@ function createGUI(){
   cbxInteractions.changed(cbxIntClicked);
   cbxInteractions.position(15, txtSubtitles.y + txtSubtitles.height + 10);
   cbxInteractions.size(150,25);
+  guiElements.push(txtSubtitles);
 
   //Slider; number of normatives
   //Slider parameters; min value = 0, max value = 2, starting value = 1, step = 0 for contiunous
   sldNumNorms = createSlider(0, 2, 1, 0); //Works as multiplier to generate number of norm boids
   sldNumNorms.position(15, cbxInteractions.y + cbxInteractions.height + 10);
   sldNumNorms.style('width', '250px');
-  //sldNumNorms.changed(sldNumNormsChanged);
+  guiElements.push(sldNumNorms);
 
   lblNumNorms = createP("Normative to Non-normative = " + startNBoids + " : " + startQBoids*objStories.length)
   lblNumNorms.position(15, sldNumNorms.y + sldNumNorms.height - 10);
   lblNumNorms.size(300, 20);
+  guiElements.push(lblNumNorms);
 
   //Buttons; next story, prev story
   //createButton
@@ -48,17 +52,20 @@ function createGUI(){
   btnPrev.mousePressed(btnPrevClicked);
   btnPrev.position(15, lblNumNorms.y + lblNumNorms.height + 30);
   btnPrev.size(80,25);
+  guiElements.push(btnPrev);
 
   btnNext = createButton("Next Story");
   btnNext.mousePressed(btnNextClicked);
   btnNext.position(btnPrev.x + btnPrev.width + 10, lblNumNorms.y + lblNumNorms.height + 30);
   btnNext.size(80,25);
+  guiElements.push(btnNext);
 
   //Instructions
   //createP for a paragraph
   txtInstructions = createP('Instructions');
   txtInstructions.position(15, btnPrev.y + btnPrev.height + 10);
-  txtInstructions.size(cnv.width, 200);
+  txtInstructions.size(320, 200);
+  guiElements.push(txtInstructions);
 }
 //----------------------------------------------------------------------------
 //Update subtitles
@@ -162,5 +169,18 @@ function btnPrevClicked(){
     }
   }
 
+}
+//----------------------------------------------------------------------------
+//Update DOM Elements' positions
+function updateGUIPositions(){
+  title.position(20,0);
+  cnv.position(0, 60);
+  txtSubtitles.position(20, cnv.y + cnv.height + 10);
+  cbxInteractions.position(15, txtSubtitles.y + txtSubtitles.height + 10);
+  sldNumNorms.position(15, cbxInteractions.y + cbxInteractions.height + 10);
+  lblNumNorms.position(15, sldNumNorms.y + sldNumNorms.height - 10);
+  btnPrev.position(15, lblNumNorms.y + lblNumNorms.height + 30);
+  btnNext.position(btnPrev.x + btnPrev.width + 10, lblNumNorms.y + lblNumNorms.height + 30);
+  txtInstructions.position(15, btnPrev.y + btnPrev.height + 10);
 }
 //----------------------------------------------------------------------------
