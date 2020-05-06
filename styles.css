@@ -1,23 +1,21 @@
 body {
   background-color: rgb(216, 216, 216);
-  width: 90%;
-  margin: 0 auto;
+  width: 99%;
+  margin:0 auto;
   font-family: Arial, Helvetica, sans-serif;}
+  #header {
+    margin: 1%}
   #content {overflow:auto}
   h1{
     color: rgb(65, 105, 220);
     font-family: Arial Black;
     text-align: center;}
-  }
   #title {
     margin: 1%}
-  #canvasDiv {
-    margin: 0%;}
+  #canvasDiv {}
   #UI_column1, #UI_column2 {
     width: 300px;
     flex-wrap: wrap;
-    float: left;
-    margin: 3%;}
-  #UI_column2 {margin-right: 0%;}
+    float: left;}
   p {
     margin: 1%}
