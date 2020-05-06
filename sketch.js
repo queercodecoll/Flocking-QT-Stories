@@ -2,7 +2,7 @@
 */
 
 let flock; //Container for the flock
-const institutions = []; //Container for all institutions
+var institutions = []; //Container for all institutions
 
 
 //String array list of all the stories
@@ -24,21 +24,26 @@ const boidType = {
 let normColour, nonColour;
 
 //Starting values (set in setup() below)
-let startNBoids, numNBoids, startQBoids, startNInst, startQInst;
+let startNBoids, numNBoids, startQBoids, startNInst, startQInst, numBoidsMult;
 
 let fft; //Container for Fast Fourier Tansform for audio analysis
 let cnv; //Container for the canvas
 
-let canvasSize;
+//Define canvas sizes
+const smlCanvas = 304;
+const medCanvas = 720;
+const lrgCanvas = 960;
+const canvasHeight = 540;
 
 //----------------------------------------------------------------------------
 //Before showing page
 function preload(){
   soundFormats('m4a'); //List of available file formats
+  let tempStories = strStories;  //copy list of story names into a temp variable
 
   //Create randomized playlist
-  while(strStories.length > 0){ //While there are still stories in temp
-    var story = strStories.splice(floor(random(strStories.length)), 1); //remove a random story name
+  while(tempStories.length > 0){ //While there are still stories in temp
+    var story = tempStories.splice(floor(random(tempStories.length)), 1); //remove a random story name
     var newStory = new Story(story); //create the new story with the obtained string
     objStories.push(newStory); //and add it to the story list
   }
@@ -47,79 +52,40 @@ function preload(){
 //----------------------------------------------------------------------------
 //before first draw
 function setup() {
-  canvasSize = createVector(640,360);
-  cnv = createCanvas(canvasSize.x, canvasSize.y);     //Create the canvas
+  cnv = createCanvas(constrain(windowWidth, smlCanvas, lrgCanvas), canvasHeight);
+  //cnv = createCanvas(canvasSize.x, canvasSize.y);     //Create the canvas
   cnv.mouseClicked(canvasClicked);  //set callback function for when canvas is clicked
-  cnv.position(5,60);               //set canvas position
-
-  frameRate(30);  //Set frame rate. Set to 30 to limit processing power needed
-  flock = new Flock();              //Create the flock
-
-  //Start boid SETTINGS
-  startNBoids = objStories.length * 2;    //Number of normative boids set to number of non-normative boids
-  startQBoids = objStories.length * 2;    //Number of non-normative boids is proportional to the number of stories
-  startNInst = 5;                         //Number of normative institutions
-  startQInst = 5;                         //Number of non-normative institutions
-
-  numNBoids = 0;                          //Current number of normative boids
+  cnv.position(0,60);               //set canvas position
 
   //Define colours
   normColour = color(255);
-  //let nonColour = color(255,0,255, #energy / maxEnergy); //transparency prop to energy level
   nonColour = color(255,0,255);
 
-  //Add Q boids
-  //Find the closest integer multiple of the number of stories
-    //-creates multiple boids for each story
-    //Note: startQBoids but be >= number of stories
-  startQBoids = floor(startQBoids/objStories.length); //Determine # of boids per story
-  for(let j = 0; j<objStories.length; j++){ //For each story..
-    for(let i=0; i<startQBoids; i++){ //For each number of multiples of that story...
-      let x = random(0,width);
-      let y = random(0,height);
-      flock.add(boidType.NON, objStories[j]); //Add a new non-normative boid to the flock
-    }
-  }
+  frameRate(30);  //Set frame rate. Set to 30 to limit processing power needed
 
-  //Add N Boids
-  for(let i=0; i<startNBoids; i++){
-    let x = random(0,width);
-    let y = random(0,height);
-    flock.add(boidType.NORM, null); //add new normative boid to the flock (story = null)
-  }
-  numNBoids = startNBoids; //At this point the number of normative boids equals the starting number
 
-  //Add Q inst
-  for(let i=0; i<startQInst; i++){
-    let x = random(0,width);
-    let y = random(0,height);
-    institutions.push(new Institution(boidType.NON)); //Add new non-normative institution
-  }
-
-  //Add N inst
-  for(let i=0; i<startNInst; i++){
-    let x = random(width);
-    let y = random(height);
-    institutions.push(new Institution(boidType.NORM)); //Add new normative institution
-  }
 
   //Sound analysis setup
   fft = new p5.FFT();
 
+  //Setup the boid world
+  loadCanvas();
+
   //Create the gui - function in ui.js
   createGUI();
+
 //End setup
 }
 //----------------------------------------------------------------------------
 //Every frame...
 function draw() {
-  //scale(cnv.width / canvasSize.x);
   background(0);                      //Set canvas background colour
   drawInstitutions(institutions);     //Draw the institutions
   flock.process();                    //Run the flock (which in turn runs the boids)
   displaySubtitles(activeStory);      //Update the subtitles
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
   text(frameRate(), 5,10);
+  //line(canvasSize/2, 0, canvasSize/2, height);  //Draw midpoint line for measuring
 //End draw
 }
 //----------------------------------------------------------------------------
@@ -171,12 +137,66 @@ function getNearestQBoid(point){
   return nearestBoid;
 //End getNearestQBoid
 }
-
+//----------------------------------------------------------------------------
 function windowResized(){
-  if(windowWidth-20 < cnv.width){
-    resizeCanvas(windowWidth-20, cnv.height);
+  resizeCanvas(constrain(windowWidth, smlCanvas, lrgCanvas), canvasHeight);
+  loadCanvas();
+}
+//----------------------------------------------------------------------------
+function loadCanvas(){
+  flock = new Flock();              //Create the flock
+  institutions = [];
+
+  //Set number of boids per story dependant on canvas size
+  let maxMult = 4;  //Set number of boids per story at maximum canvas size
+  let interval = (lrgCanvas-smlCanvas) / (maxMult); //determine interval sizes
+  for(let i = 0; i < maxMult; i++){
+    let bounds = (i*interval) + smlCanvas; //determine the boundary for this interval (starting with smallest)
+    if(width > bounds){
+      numBoidsMult = i+1;
+    }
   }
-  else if(windowWidth - 20 > cnv.width &&  cnv.width < canvasSize.x){
-    resizeCanvas(windowWidth - 20, cnv.height);
+
+  //Start boid SETTINGS
+  startNBoids = objStories.length * numBoidsMult;    //Number of normative boids set to number of non-normative boids
+  startQBoids = objStories.length * numBoidsMult;    //Number of non-normative boids is proportional to the number of stories
+  startNInst = 3 * numBoidsMult;                         //Number of normative institutions
+  startQInst = 3 * numBoidsMult;                         //Number of non-normative institutions
+
+  numNBoids = 0;                          //Current number of normative boids
+
+  //Add Q boids
+  //Find the closest integer multiple of the number of stories
+    //-creates multiple boids for each story
+    //Note: startQBoids but be >= number of stories
+  startQBoids = floor(startQBoids/objStories.length); //Determine # of boids per story
+  for(let j = 0; j<objStories.length; j++){ //For each story..
+    for(let i=0; i<startQBoids; i++){ //For each number of multiples of that story...
+      let x = random(0,width);
+      let y = random(0,height);
+      flock.add(boidType.NON, objStories[j]); //Add a new non-normative boid to the flock
+    }
+  }
+
+  //Add N Boids
+  for(let i=0; i<startNBoids; i++){
+    let x = random(0,width);
+    let y = random(0,height);
+    flock.add(boidType.NORM, null); //add new normative boid to the flock (story = null)
+  }
+  numNBoids = startNBoids; //At this point the number of normative boids equals the starting number
+
+  //Add Q inst
+  for(let i=0; i<startQInst; i++){
+    let x = random(0,width);
+    let y = random(0,height);
+    institutions.push(new Institution(boidType.NON)); //Add new non-normative institution
+  }
+
+  //Add N inst
+  for(let i=0; i<startNInst; i++){
+    let x = random(width);
+    let y = random(height);
+    institutions.push(new Institution(boidType.NORM)); //Add new normative institution
   }
 }

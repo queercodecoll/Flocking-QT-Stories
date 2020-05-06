@@ -287,11 +287,11 @@ class Boid {
     //Draw the boid
     strokeWeight(1);  //Set the line width
     push();           //push the drawing matrix (start at 0,0)
-    translate(this.position.x, this.position.y);  //Set current drawing position to this boids position
-    rotate(rot);  //Rotate the drawing space so that velocity points directly up
-    triangle(0,boidSize*2,              //Draw the boids triangle shape (top, bottom left, bottom right)
-             -boidSize, -boidSize*2,
-             boidSize, -boidSize*2);
+      translate(this.position.x, this.position.y);  //Set current drawing position to this boids position
+      rotate(rot);  //Rotate the drawing space so that velocity points directly up
+      triangle(0,boidSize*2,              //Draw the boids triangle shape (top, bottom left, bottom right)
+               -boidSize, -boidSize*2,
+               boidSize, -boidSize*2);
     pop();      //Bring back the standard drawing matrix
 
     //Show that the boid's story is selected (if story is playing)
