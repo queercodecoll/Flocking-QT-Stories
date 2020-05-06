@@ -24,7 +24,6 @@ function createGUI(){
   //Legend; norm boid, non boid, norm inst, non inst, harm line, support line
   //createDiv and create Img
 
-
   //Checkbox; interactions
   //createCheckbox
   cbxInteractions = createCheckbox('Show Interactions',true);
@@ -32,15 +31,14 @@ function createGUI(){
   cbxInteractions.position(15, txtSubtitles.y + txtSubtitles.height + 10);
   cbxInteractions.size(150,25);
 
-
   //Slider; number of normatives
-  //createSlider, createDiv for label
-  sldNumNorms = createSlider(0, startQBoids*2, startNBoids, 1);
+  //Slider parameters; min value = 0, max value = 2, starting value = 1, step = 0 for contiunous
+  sldNumNorms = createSlider(0, 2, 1, 0); //Works as multiplier to generate number of norm boids
   sldNumNorms.position(15, cbxInteractions.y + cbxInteractions.height + 10);
   sldNumNorms.style('width', '250px');
   //sldNumNorms.changed(sldNumNormsChanged);
 
-  lblNumNorms = createP("Normative Boids to Non-normative Boids = " + startNBoids + " : " + startQBoid)
+  lblNumNorms = createP("Normative to Non-normative = " + startNBoids + " : " + startQBoids*objStories.length)
   lblNumNorms.position(15, sldNumNorms.y + sldNumNorms.height - 10);
   lblNumNorms.size(300, 20);
 
@@ -77,23 +75,25 @@ function cbxIntClicked(){
 //SLider callback function; update number of normative boids
 //CHANGE: called during Draw so update happens while user drags
 function sldNumNormsChanged(){
-  let change = abs(numNBoids - sldNumNorms.value());
+  let desiredNum = round(sldNumNorms.value()*startNBoids);
+  let change = abs(numNBoids - desiredNum);
 
-  if(numNBoids < sldNumNorms.value()){
+  if(numNBoids < desiredNum){
     for(let i=0; i < change; i++){
       flock.add(boidType.NORM, null);
       numNBoids++;
     }
   }
-  else if(numNBoids > sldNumNorms.value()){
+  else if(numNBoids > desiredNum){
     for(let i=0; i < change; i++){
       flock.remove();
       numNBoids--;
     }
   }
+  //else don't change the number of normative boids
 
   //Update label
-  lblNumNorms.html("Normative to Non-normative = " + numNBoids + " : " + startQBoids*objStories.length)
+  lblNumNorms.html("Normative to Non-normative = " + numNBoids + " : " + startQBoids)
 }
 //----------------------------------------------------------------------------
 //Next Story button Callback; stop current story, find and start next story
