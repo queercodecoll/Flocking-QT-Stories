@@ -86,7 +86,7 @@ function draw() {
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
   text(frameRate(), 5,10);
   //line(canvasSize/2, 0, canvasSize/2, height);  //Draw midpoint line for measuring
-  selectFollowBoid();
+  if(frameCount % 300 == 0){selectFollowBoid();}
   drawInvite();
 //End draw
 }
@@ -155,6 +155,8 @@ function windowResized(){
     //Number of normative boids may have changed. Update slider value.
     sldNumNorms.value(1);
     //updateGUIPositions();
+
+    selectFollowBoid();
   }
 }
 //----------------------------------------------------------------------------
@@ -214,6 +216,7 @@ function loadCanvas(){
     let y = random(height);
     institutions.push(new Institution(boidType.NORM)); //Add new normative institution
   }
+
 }
 //----------------------------------------------------------------------------
 //Invite user to select a boid
@@ -238,9 +241,7 @@ function drawInvite(){
 //----------------------------------------------------------------------------
 //Select a Q boid to follow
 function selectFollowBoid(){
-  if(frameCount % 300 == 0){
-    do{
+  do{
       followBoid = random(flock.boidList);
     }while(followBoid.bType != boidType.NON);
-  }
 }
