@@ -34,6 +34,9 @@ class Flock {
     }
     else if(newBoid.bType === boidType.NON){
       this.numQBoids++;
+      if(followBoid == null){
+        followBoid = newBoid;
+      }
     }
   //End add
   }

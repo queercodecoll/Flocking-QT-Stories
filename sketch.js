@@ -35,6 +35,7 @@ const maxWidth = 960;
 const minHeight = 320;
 const maxHeight = 540;
 
+let followBoid;
 //----------------------------------------------------------------------------
 //Before showing page
 function preload(){
@@ -85,7 +86,8 @@ function draw() {
   sldNumNormsChanged();               //Update the number of normatives with respect to the slider
   text(frameRate(), 5,10);
   //line(canvasSize/2, 0, canvasSize/2, height);  //Draw midpoint line for measuring
-
+  selectFollowBoid();
+  drawInvite();
 //End draw
 }
 //----------------------------------------------------------------------------
@@ -211,5 +213,28 @@ function loadCanvas(){
     let x = random(width);
     let y = random(height);
     institutions.push(new Institution(boidType.NORM)); //Add new normative institution
+  }
+}
+//----------------------------------------------------------------------------
+//Invite user to select a boid
+function drawInvite(){
+  fill(255,175);
+  let followOffset = 10;
+  let position = followBoid.position;
+  let size = createVector(100, 60);
+  rect(followOffset + position.x, position.y, size.x, size.y);
+  textSize(12);
+  textAlign(CENTER, CENTER);
+  fill(200, 0, 200);
+  stroke(150, 0, 150);
+  text("TAP THIS COLOR BOID TO HERE ITS STORY", followOffset + position.x, position.y, size.x, size.y);
+}
+//----------------------------------------------------------------------------
+//Select a Q boid to follow
+function selectFollowBoid(){
+  if(frameCount % 300 == 0){
+    do{
+      followBoid = random(flock.boidList);
+    }while(followBoid.bType != boidType.NON);
   }
 }
