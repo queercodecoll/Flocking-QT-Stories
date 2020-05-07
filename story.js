@@ -8,8 +8,8 @@
 */
 
 /*Note:
-  Right now, building loading of audio into contructor. Story needs
-  to be declared in preload.
+  Right now, loading of audio happens when the Story object is created. As such,
+  the Story should to be declared in preload.
   If that doesn't work, use another array (audioList) to preload then
   add parameter in contructor for audioFile.
 */
@@ -83,6 +83,7 @@ class Story {
 //End Story Class
 }
 //----------------------------------------------------------------------------
+//FUNCTIONS OUTSIDE OF CLASS
 //----------------------------------------------------------------------------
 //Display the subtitles
 //Set to display as DOM element in ui.js

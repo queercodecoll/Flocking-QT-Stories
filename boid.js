@@ -1,7 +1,17 @@
 //Define Boid Class
+/* The boids represent the agents in this agent based system. They each
+   determine their own motion based on their neighbours (other boids) around
+   them. Forces for steering closer, steering away from, and
+   steering to align with other boids are all calculated and applied.
+   In this application, boids have 2 types; normative and non-normative. While
+   all boids have the same parameters, only the non-normative boids are loaded
+   with a story (audio and text info). THe non-normative boids also have their
+   forces d3etermined from the sound of the audio file beign played.
+*/
 
-var showInteractions = true;
-let edgeConsideration = true;
+//Boolean toggles
+var showInteractions = true;    //Show harm/support lines
+let edgeConsideration = true;   //Boids can look past edges
 
 class Boid {
   //Constructor
@@ -36,7 +46,7 @@ class Boid {
     //Physics
     this.maxForce = 0.1;  //The max value that ali, sep, coh calculate before multipliers
     this.maxSpeed = 1.5;  //Fastest that a boid can travel
-    this.position = createVector(random(width), random(height));
+    this.position = createVector(random(width), random(height)); //Set boids it random position and velocity
     this.velocity = createVector(random(-1,1), random(-1,1))
     this.velocity.setMag(random(this.maxSpeed));
     this.acceleration = createVector();
@@ -45,7 +55,7 @@ class Boid {
   //Check if boid is at edge of canvas. If so, teleport to other side
   boundaryCheck() {
     //Check if x value (horizontal) is outside area.
-    //If so, set to opposite side.
+    //If so, set position to opposite side.
     if (this.position.x > width) {
       this.position.x = 0;
     } else if (this.position.x < 0) {
@@ -116,8 +126,6 @@ class Boid {
       //If other boid is not this boid, continue
       if (other != this){
         //Check if other boid is closer through edge
-
-        //let otherPos = other.position;
         let otherPos = this.altPosition(other); //altPosition determines if other is closer through edge
                                                 //and returns other position or the alt other position
 
@@ -139,22 +147,22 @@ class Boid {
   //End find neighbours
   }
   //----------------------------------------------------------------------------
-  //Determine force vector to align with neighbours
+  //Determine the steering force vector to align with neighbours
   alignment() {
     let steering = createVector();
 
-    for (let other of this.neighbours) {
-      steering.add(other.velocity); //sum all velocity vectors of close neighbours
-    }
-    for (let other of this.neighboursFar) {
-      steering.add(other.velocity); //add all the velocity vectors of far neighbours
+    //Alignment looks at close and far neighbours
+    let boids = concat(this.neighbours, this.neighboursFar);
+
+    for (let other of boids) {
+      steering.add(other.velocity); //sum all velocity vectors of the neighbours
     }
 
     //As long as there is at least 1 neighbour (close or far)...
-    if (this.neighbours.length + this.neighboursFar.length > 0) {
-      steering.div(this.neighbours.length + this.neighboursFar.length); //average the velocity vectors
+    if (boids.length > 0) {
+      steering.div(boids.length); //average the velocity vectors
       steering.setMag(this.maxSpeed);
-      steering.sub(this.velocity); //Determine the vector direction
+      steering.sub(this.velocity); //Determine the vector of velocity between this boid and the desired direction
       steering.limit(this.maxForce); //Cap the amount of force
     }
 
@@ -195,24 +203,21 @@ class Boid {
   cohesion() {
     let steering = createVector();
 
-    //For all the close neighbours
-    for (let other of this.neighbours) {
+    //Cohesion looks at close and far neighbours
+    let boids = concat(this.neighbours, this.neighboursFar);
+
+    //For all the neighbours
+    for (let other of boids) {
       let otherPos = this.altPosition(other); //Determine if they are closer through an edge
       steering.add(otherPos); //Sum their collective positions
     }
 
-    //Same for far neighbours
-    for (let other of this.neighboursFar) {
-      let otherPos = this.altPosition(other);
-      steering.add(otherPos);
-    }
-
     //If there is at least 1 close or far neighbour, determine the force vector
-    if (this.neighbours.length + this.neighboursFar.length > 0) {
-      steering.div(this.neighbours.length + this.neighboursFar.length); //Calculate the average magnitude
+    if (boids.length > 0) {
+      steering.div(boids.length); //Calculate the average magnitude
       steering.sub(this.position); //Find vector from this boid to average point
       steering.setMag(this.maxSpeed);
-      steering.sub(this.velocity); //Determine vector direction to average point
+      steering.sub(this.velocity); //Determine velocity vector direction to average point
       steering.limit(this.maxForce); //Cap amount of force
     }
 
@@ -228,7 +233,8 @@ class Boid {
     let cohesion = this.cohesion();
     let separation = this.separation();
 
-    let aliMult, sepMult, cohMult; //Declare the multipliers
+    //Declare the multipliers
+    let aliMult, sepMult, cohMult;
 
     //Normative boids use default multipliers
     if(this.bType === boidType.NORM){
@@ -267,6 +273,8 @@ class Boid {
   }
   //----------------------------------------------------------------------------
   //Draw this boid
+  //If the boid's story is selected and playing, draw a circle around it
+  //to signify that the boid is selected.
   render(){
     let boidSize = 4; //Size of boids on the canvas
 
@@ -286,10 +294,10 @@ class Boid {
 
     //Draw the boid
     strokeWeight(1);  //Set the line width
-    push();           //push the drawing matrix (start at 0,0)
+    push();           //push the current drawing matrix to the stack (start at 0,0)
       translate(this.position.x, this.position.y);  //Set current drawing position to this boids position
       rotate(rot);  //Rotate the drawing space so that velocity points directly up
-      triangle(0,boidSize*2,              //Draw the boids triangle shape (top, bottom left, bottom right)
+      triangle(0,boidSize*2,           //Draw the boids triangle shape (top, bottom left, bottom right)
                -boidSize, -boidSize*2,
                boidSize, -boidSize*2);
     pop();      //Bring back the standard drawing matrix
