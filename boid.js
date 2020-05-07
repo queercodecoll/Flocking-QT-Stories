@@ -438,8 +438,11 @@ class Boid {
 
     //Check if boid is under the subtitle box. If so, set minimum energy
     //higher so boid doesn't get stuck behind it.
-    if(activeStory != null && activeStory.isPlaying() && isUnderSubs(this.position)){ 
+    if(activeStory != null && activeStory.isPlaying() && isUnderSubs(this.position)){
       minEnergy = 10;
+    }
+    else{
+      minEnergy = 0;
     }
 
     //Keep enegy value between min and max energy allowed

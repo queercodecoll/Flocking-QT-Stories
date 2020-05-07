@@ -135,15 +135,15 @@ function displaySubtitles(story){
 //Determine if point is under the subtitle box
 //Used to determine if boids are under the subtitles (see minorityExperience() in boids.js)
 function isUnderSubs(point){
-  let under;
 
   //Check if x component is within the subtitle box's range
-  let xCheck = (point.x > (textboxPos.x - 10)) &&
-               (point.x < (textboxPos.x + textboxSize.x + 10));
+  //Note: subtitle box uses center positioning.
+  let xCheck = (point.x > (textboxPos.x - textboxSize.x/2 - 10)) &&
+               (point.x < (textboxPos.x + textboxSize.x/2 + 10));
 
   //Check if y component is within the subtitle box's range;
-  let yCheck = (point.y > (textboxPos.y - 10)) &&
-               (point.y < (textboxPos.y + textboxSize.y + 10));
+  let yCheck = (point.y > (textboxPos.y - textboxSize.y/2 - 10)) &&
+               (point.y < (textboxPos.y + textboxSize.y/2 + 10));
 
   //If both x and y components are within the subtitle box range then return true;
   return (xCheck && yCheck);

@@ -65,10 +65,6 @@ function setup() {
   cnv = createCanvas(canvasWidth, canvasHeight);
   cnv.mouseClicked(canvasClicked);  //set callback function for when canvas is clicked
 
-  //Subtitle box variables
-  textboxSize = createVector(300,65);
-  textboxPos= createVector(width/2, height-textboxSize.y/2 - 10);
-
   //Define colours
   normColour = color(255);
   nonColour = color(255,0,255);
@@ -183,6 +179,10 @@ function loadCanvas(){
   flock = new Flock();     //Create the flock
   institutions = [];       //Initialize the list of institutions
 
+  //Subtitle box variables; set size and position of subtitles.
+  textboxSize = createVector(300,65);
+  textboxPos= createVector(width/2, height-textboxSize.y/2 - 10);
+
   //Set number of boids per story dependant on canvas size
   let maxMult = 4;  //Set number of boids per story at maximum canvas size
   let interval = (maxWidth-minWidth) / (maxMult); //determine interval sizes
@@ -207,8 +207,6 @@ function loadCanvas(){
   let perStory = floor(startQBoids/objStories.length); //Determine # of boids per story
   for(let j = 0; j < objStories.length; j++){ //For each story..
     for(let i=0; i < perStory; i++){ //For each number of multiples of that story...
-      let x = random(0,width);
-      let y = random(0,height);
       flock.add(boidType.NON, objStories[j]); //Add a new non-normative boid to the flock
     }
   }
@@ -216,8 +214,6 @@ function loadCanvas(){
   //Add N Boids
   //This is usually equal to the number of starting non-normative boids but doesn't have to be
   for(let i=0; i < startNBoids; i++){
-    let x = random(0,width);
-    let y = random(0,height);
     flock.add(boidType.NORM, null); //add new normative boid to the flock (story = null)
   }
   //At this point the number of normative boids equals the starting number
@@ -225,17 +221,16 @@ function loadCanvas(){
 
   //Add Q inst
   for(let i=0; i<startQInst; i++){
-    let x = random(0,width);
-    let y = random(0,height);
+
     institutions.push(new Institution(boidType.NON)); //Add new non-normative institution
   }
 
   //Add N inst
   for(let i=0; i<startNInst; i++){
-    let x = random(width);
-    let y = random(height);
+
     institutions.push(new Institution(boidType.NORM)); //Add new normative institution
   }
+
 //End loadCanvas
 }
 //----------------------------------------------------------------------------

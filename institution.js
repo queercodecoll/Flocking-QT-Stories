@@ -9,7 +9,13 @@ class Institution {
   */
   constructor(bType) {
     this.bType = bType;
-    this.position = createVector(random(width), random(height));
+    let x,y,pos;
+    do{
+      x = round(random(width));
+      y = round(random(height));
+      pos = createVector(x,y);
+    }while(isUnderSubs(pos));
+    this.position = pos;
   }
   //---------------------------------------------------------------------------
   //Draw this institution
