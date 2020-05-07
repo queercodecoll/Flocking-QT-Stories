@@ -7,15 +7,17 @@ eddy
 0023:spending time with all my family members,
 0026:I had been "ma'am"ed and "lady"ed and "she"d so many times.
 0031:It was just getting...
-0032:I wasn't surrounded by my.. my queer family and so it was getting really overwhelming.
+0033:I wasn't surrounded by my.. my queer family and so it was getting really overwhelming.
 0038:And I remember one time I just decided to go for a walk down to the river.
 0043:And I must have sat in front of the river for like half an hour,
-0046:just thinking about how impossible I thought the future would be to navigate using they/them pronouns
+0046:just thinking about how impossible I thought the
+0050:future would be to navigate using they/them pronouns
 0054:and realizing that I never maybe would see a future where that was normalized and
 0060:that was really scary and I was frozen with the realization
-0064:and I just remember I was shooken out of it
+0065:and I just remember I was shooken out of it
 0068:because my friend called to check in on me and ask
-0071:how I was doing. And they just said my name over and over and over and over and over again.
+0071:how I was doing. And they just said my name
+0074:over and over and over and over and over again.
 077:and they told me that it was because I was surrounded by family and I had no queer family
 0083:that I'd.. I'd lost a few.. I'd lost a little bit of my hope,
 0088:but that it would come back when I came back to Calgary and it gave me comfort.

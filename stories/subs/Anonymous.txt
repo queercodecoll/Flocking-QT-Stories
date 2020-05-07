@@ -1,15 +1,25 @@
 Anonymous
 
-0000:It was about two months ago, I received a beautiful peach-coloured scarf as a present.
+0000:It was about two months ago,
+0004:I received a beautiful peach-coloured scarf as a present.
 0008:I immediately thought that I'm not feminine enough to wear it.
 0013:I usually wear black and different shades of grey.
-0018:I guess these choices started as an effort to hide a few extra pounds accumulated over months
-0024:and also trying to be taken seriously and get some respect at my workplace.
-0031:Bright colours like electric blue, lime green, or fuchsia were never treated as serious, right?
-0039:As my closet became darker and darker, I felt less feminine.
-0044:I think that society's norms for the match up of colours and genders
-0048:were penetrated deeper into my consciousness than my expectations.
-0054:Still today, all around the world, blue is for baby boys, and pink is for baby girls.
+0018:I guess these choices started as an effort
+0021:to hide a few extra pounds accumulated over months
+0025:and also trying to be taken seriously
+0028:and get some respect at my workplace.
+0031:Bright colours like electric blue, lime green,
+0034:or fuchsia were never treated as serious, right?
+0039:As my closet became darker and darker,
+0042:I felt less feminine.
+0044:I think that society's norms
+0046:for the match up of colours and genders
+0048:were penetrated deeper into my consciousness
+0052:than my expectations.
+0054:Still today, all around the world,
+0057:blue is for baby boys, and pink is for baby girls.
 0061:We are being raised with those commitments.
-0064:I can't stop but wonder how a colour deficient world
-0068:would affect our perception of gender and sexual identities.
+0064:I can't stop but wonder
+0067:how a colour deficient world
+0068:would affect our perception
+0070:of gender and sexual identities.
