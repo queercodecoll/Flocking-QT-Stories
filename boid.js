@@ -323,6 +323,7 @@ class Boid {
     let lineSize = 1; //Size of the interaction lines
     let boidsInRange = []; //Container for boids interacting with this one
     let otherPos; //Container for the other boid's position (or reflective position)
+    let minEnergy = 0; //Set default minimum energy;
 
     //Not for norms. If this is a normative boid, exit the function
     if(this.bType == boidType.NORM){
@@ -407,9 +408,6 @@ class Boid {
         strokeWeight(lineSize); //set line size
         this.drawInteractionLine(other); //Draw the line form this boid to the other
       }
-
-      //Keep enegy value between 0 and max energy allowed
-      this.energy = constrain(this.energy, 0, this.maxEnergy);
     }
 
     //Harm/Support from institutions in range
@@ -435,11 +433,17 @@ class Boid {
           strokeWeight(lineSize); //set line size
           this.drawInteractionLine(inst); //Draw the line from this boid to the institution
         }
-
-        //Keep enegy value between 0 and max energy allowed
-        this.energy = constrain(this.energy, 0, this.maxEnergy);
       }
     }
+
+    //Check if boid is under the subtitle box. If so, set minimum energy
+    //higher so boid doesn't get stuck behind it.
+    if(activeStory != null && activeStory.isPlaying() && isUnderSubs(this.position)){ 
+      minEnergy = 10;
+    }
+
+    //Keep enegy value between min and max energy allowed
+    this.energy = constrain(this.energy, minEnergy, this.maxEnergy);
   //End minorityExperience
   }
   //----------------------------------------------------------------------------

@@ -14,6 +14,9 @@
   add parameter in contructor for audioFile.
 */
 
+//GLOBAL VARIABLES FOR STORY
+let textboxSize, texboxPos;
+
 class Story {
   /*Parameters
       name: a string identifying the story. Used to find the audio and text files.
@@ -22,8 +25,8 @@ class Story {
     this.name = name; //set the name of this story
     this.audio = loadSound('stories/audio/'+name); //load the audio
     this.text = loadStrings('stories/subs/'+name+".txt"); //load the text
-    this.speaker = this.text[0];  //1st line of text file is the speaker
-    this.pronouns = this.text[1];  //2nd line of text file is their pronouns
+    this.speaker;  //1st line of text file is the speaker
+    this.pronouns;  //2nd line of text file is their pronouns
     this.subtitlePointer = 1; //3rd line is first subtitle (format = ####(seconds):subtitle)
     this.currSubtitle; //The current loaded subtitle
   }
@@ -49,6 +52,16 @@ class Story {
   //For first run, subtitlePointer + 1 should = 3, so that it will perceive
   //the first subtitle as 'the next' subtitle.
   getCurrentSubtitle(){
+
+    //Set speaker and pronouns
+    if(this.speaker == null){
+      this.speaker = this.text[0];
+      this.pronouns = this.text[1];
+      if(this.pronouns == null){
+        this.pronouns = " ";
+      }
+    }
+
     if((this.subtitlePointer + 1) <= this.text.length-1){ //If there is a next line...
       let audioTime = this.audio.currentTime(); //get the current audio's track time
       let nextLine = this.text[this.subtitlePointer+1]; //Look at next line in txt file to check time stamp
@@ -93,28 +106,46 @@ class Story {
 function displaySubtitles(story){
   if(story != null){  //Check that story exists
     if(story.isPlaying()){ //Check that it's playing
-      let textboxSize = createVector(300,65);
-      let pos = createVector(width/2, height-textboxSize.y/2 - 10);
 
       //Draw subtitle background
-      fill(200);
-      stroke(200);
-      strokeWeight(1);
+      fill(200,225);
+      stroke(225);
+      strokeWeight(2);
       rectMode(CENTER);
-      rect(pos.x, pos.y, textboxSize.x, textboxSize.y);
+      rect(textboxPos.x, textboxPos.y, textboxSize.x, textboxSize.y);
 
       //Get speaker & pronouns
-      let strSpeaker = "Speaker: " + story.name;
+      let strSpeaker = "Speaker: " + story.speaker + " " + story.pronouns;
 
       //Get subtitle
       let subtitle= story.getCurrentSubtitle();
 
       //Display text
       fill(0);
+      stroke(200);  //Match box fill colour
+      strokeWeight(1);
       textAlign(CENTER, TOP);
       textSize(14);
-      text(strSpeaker + "\n" + subtitle, pos.x, pos.y + 5, textboxSize.x, textboxSize.y);
+      text(strSpeaker + "\n" + subtitle, textboxPos.x, textboxPos.y + 5, textboxSize.x, textboxSize.y);
     }
   }
 //End displaySubtitles
+}
+//----------------------------------------------------------------------------
+//Determine if point is under the subtitle box
+//Used to determine if boids are under the subtitles (see minorityExperience() in boids.js)
+function isUnderSubs(point){
+  let under;
+
+  //Check if x component is within the subtitle box's range
+  let xCheck = (point.x > (textboxPos.x - 10)) &&
+               (point.x < (textboxPos.x + textboxSize.x + 10));
+
+  //Check if y component is within the subtitle box's range;
+  let yCheck = (point.y > (textboxPos.y - 10)) &&
+               (point.y < (textboxPos.y + textboxSize.y + 10));
+
+  //If both x and y components are within the subtitle box range then return true;
+  return (xCheck && yCheck);
+//End isUnderSubs
 }

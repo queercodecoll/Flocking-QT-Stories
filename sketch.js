@@ -65,6 +65,10 @@ function setup() {
   cnv = createCanvas(canvasWidth, canvasHeight);
   cnv.mouseClicked(canvasClicked);  //set callback function for when canvas is clicked
 
+  //Subtitle box variables
+  textboxSize = createVector(300,65);
+  textboxPos= createVector(width/2, height-textboxSize.y/2 - 10);
+
   //Define colours
   normColour = color(255);
   nonColour = color(255,0,255);
