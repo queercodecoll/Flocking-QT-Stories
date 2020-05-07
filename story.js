@@ -108,7 +108,7 @@ function displaySubtitles(story){
     if(story.isPlaying()){ //Check that it's playing
 
       //Draw subtitle background
-      fill(200,225);
+      fill(200);
       stroke(225);
       strokeWeight(2);
       rectMode(CENTER);

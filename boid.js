@@ -182,7 +182,7 @@ class Boid {
       let dif = p5.Vector.sub(this.position, otherPos); //Determine the direction for separation
                                                          //from the other boid
       dis = max(dis, 0.01); //To avoid dividing by 0 below, set minimum value for distance
-      dif.div(dis);         //Magnitude of force vector is inversely proportional to distance
+      dif.div(dis*dis);         //Magnitude of force vector is inversely proportional to distance
       steering.add(dif);    //Sum all the determined force vectors
     }
 
