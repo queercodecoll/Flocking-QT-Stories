@@ -3,13 +3,24 @@ body {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;}
-  #header {
-    margin: 1%;}
+
+  .logo{
+    margin: 1%;
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+  }
   #content {overflow:auto;
   background-color: rgb(216,216,216)}
 
+.headerContainer {
+  display: flex;
+}
+
 /* Add a background color to the top navigation */
   .topnav {
+    margin: 1%;
+    float: right;
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -44,7 +55,7 @@ body {
     display: none;
   }
 
-/*    .topnav.responsive a {
+    .topnav.responsive a {
       float: none;
       display: block;
       text-align: left;
@@ -52,8 +63,7 @@ body {
 
     /* Dropdown container - needed to position the dropdown content */
     .dropdown {
-      float: right;
-      overflow: hidden;
+      overflow: visible;
     }
 
     /* Style the dropdown button to fit inside the topnav */
