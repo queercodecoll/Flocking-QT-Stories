@@ -163,22 +163,19 @@ body {
     align-items: center;
     justify-content: center;
   }
-  #UI_Container {
+  .UI_Container, .longTextContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1%;}
+
   #UI_column1, #UI_column2 {
     width: 300px;
     flex-wrap: wrap;
     float: left;
     margin: 1.5%;}
-  #longTextContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1%;}
-  #longText {
+
+  .longText {
     max-width: 700px;
     margin: 1.5%;
   }
@@ -190,10 +187,4 @@ body {
   }
   ul {
     list-style: none;
-  }
-  #footerContainer {
-    display: flex;
-    flex-wrap: wrap;
-    position: left;
-    margin: 1.5%;
   }
