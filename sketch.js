@@ -61,6 +61,7 @@ function preload(){
   divLoading.style('justify-align', 'center');
   divLoading.style('align-items', 'center');
   divLoading.style('border', 'solid');
+  divLoading.style('box-shadow', '5px 10px 20px');
 
   //Loading Text
   txtLoading = createP("LOADING...");
