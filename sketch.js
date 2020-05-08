@@ -42,11 +42,48 @@ const maxHeight = 540;
 //OTHER GLOBAL VARIABLES
 let fft; //Container for Fast Fourier Tansform for audio analysis
 
+var divLoading, txtLoading, barLoading, progLoading, divShadow;
+var storiesLoaded, percentLoaded, numStories;
+
 //----------------------------------------------------------------------------
 //Before showing page...
 function preload(){
   soundFormats('m4a'); //List of available file formats
   let tempStories = strStories;  //copy list of story names into a temp variable
+  numStories = tempStories.length;
+  storiesLoaded = 0;
+
+  divLoading = createDiv();
+  divLoading.size(240,100);
+  divLoading.position((windowWidth - divLoading.width)/2, 150);
+  divLoading.style('background-color', '#B4B');
+  divLoading.style('display', 'grid');
+  divLoading.style('justify-align', 'center');
+  divLoading.style('align-items', 'center');
+  divLoading.style('border', 'solid');
+
+  //Loading Text
+  txtLoading = createP("LOADING...");
+  txtLoading.parent(divLoading);
+  txtLoading.size(divLoading.width, 20);
+  txtLoading.style('text-align', 'center');
+  txtLoading.style('margin-top', '7.5%');
+  txtLoading.style('margin-bottom', '0%');
+
+  //Loading bar
+  barLoading = createDiv();
+  barLoading.parent(divLoading);
+  barLoading.size(100, 20);
+  barLoading.style('width', '80%');
+  barLoading.style('margin', '10%');
+  barLoading.style('margin-top', '7.5%');
+  barLoading.style('border', 'solid');
+  barLoading.style('background-color', '#B4B');
+
+  progLoading = createDiv();
+  progLoading.parent(barLoading);
+  progLoading.size(0, barLoading.height);
+  progLoading.style('background-color', '#000');
 
   //Create randomized playlist
   while(tempStories.length > 0){ //While there are still stories in temp
@@ -57,8 +94,20 @@ function preload(){
 //End preload
 }
 //----------------------------------------------------------------------------
+//Callback function for when audio is loaded during story constructor
+function audioLoaded(){
+  storiesLoaded++;
+  percentLoaded = storiesLoaded / numStories;
+  progLoading.size(barLoading.width*percentLoaded);
+//End audioLoaded
+}
+//----------------------------------------------------------------------------
 //Before first draw...
 function setup() {
+
+  //Remove Loading Panel
+  removeElements();
+
   //Create the canvas
   let canvasWidth = constrain(windowWidth, minWidth, maxWidth);
   let canvasHeight = map(canvasWidth, minWidth, maxWidth, minHeight, maxHeight);

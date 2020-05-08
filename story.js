@@ -23,7 +23,7 @@ class Story {
   */
   constructor(name) {
     this.name = name; //set the name of this story
-    this.audio = loadSound('stories/audio/'+name); //load the audio
+    this.audio = loadSound('stories/audio/'+name, audioLoaded); //load the audio
     this.text = loadStrings('stories/subs/'+name+".txt"); //load the text
     this.speaker;  //1st line of text file is the speaker
     this.pronouns;  //2nd line of text file is their pronouns
