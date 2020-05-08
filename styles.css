@@ -3,23 +3,18 @@ body {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;}
-
-  .logo{
-    margin: 1%;
-    position: absolute;
-    padding-left: 20px;
-    float: left;
-  }
+  #header {
+    margin: 1%;}
   #content {overflow:auto;
   background-color: rgb(216,216,216)}
 
 .headerContainer {
-  display: flex;
+  display:flex;
+  margin: 1%;
 }
 
 /* Add a background color to the top navigation */
   .topnav {
-    margin: 1%;
     float: right;
     display: flex;
     flex-wrap: wrap;
@@ -63,7 +58,7 @@ body {
 
     /* Dropdown container - needed to position the dropdown content */
     .dropdown {
-      overflow: visible;
+      overflow: hidden;
     }
 
     /* Style the dropdown button to fit inside the topnav */
