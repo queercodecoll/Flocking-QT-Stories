@@ -251,7 +251,7 @@ function drawInvite(){
   textAlign(CENTER, CENTER);
   fill(200, 0, 200);
   stroke(150, 0, 150);
-  text("TAP THIS BOID TO HERE ITS STORY", followOffset + position.x, position.y + 5, size.x, size.y);
+  text("TAP THIS BOID TO HEAR ITS STORY", followOffset + position.x, position.y + 5, size.x, size.y);
 
   //Draw the pointer
   fill(100);

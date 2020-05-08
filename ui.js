@@ -42,9 +42,10 @@ function createGUI(){
   divLbl.size(285);
   divLbl.style('border-style', 'solid');
   //Create slider heading
-  lblRatio = createP("Boid Ratio");
+  lblRatio = createP("Boid Ratio Slider");
   lblRatio.parent(divLbl);
   lblRatio.style('font', 'bold');
+  lblRatio.style('text-align', 'center');
   //Create slider value explanation
   lblNumNorms = createP("Normative to Non-normative = " + startNBoids + " : " + startQBoids*objStories.length)
   lblNumNorms.parent(divLbl);
@@ -64,18 +65,19 @@ function createGUI(){
   //Set as child of Controls division
   divButtons = createDiv();
   divButtons.parent(divControls);
+  divButtons.style('margin-top', '5%');
   //Create 'Prev' button
   btnPrev = createButton("Prev Story");
   btnPrev.mousePressed(btnPrevClicked);
   btnPrev.parent(divButtons);
-  btnPrev.size(80, 25);
-  btnPrev.style('margin', '10%');
+  btnPrev.size(100, 35);
+  btnPrev.style('margin', '7%');
   //Create 'Next' button
   btnNext = createButton("Next Story");
   btnNext.mousePressed(btnNextClicked);
   btnNext.parent(divButtons);
-  btnNext.size(80,25);
-  btnNext.style('margin', '10%');
+  btnNext.size(100,35);
+  btnNext.style('margin', '7%');
 
   //LEGEND
   //Create division for the legend and load the legend image into it
