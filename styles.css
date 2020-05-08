@@ -10,12 +10,13 @@ body {
 
 .headerContainer {
   display:flex;
+  flex-wrap: wrap;
   margin: 1%;
+  justify-content: space-between;
 }
 
 /* Add a background color to the top navigation */
   .topnav {
-    margin-left: 38%;
     float: right;
     display: flex;
     flex-wrap: wrap;
