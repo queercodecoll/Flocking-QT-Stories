@@ -76,6 +76,7 @@ body {
 
     /* Style the dropdown content (hidden by default) */
     .dropdown-content {
+      margin-top: 48px;
       display: none;
       position: absolute;
       background-color: rgb(246, 246, 246);
