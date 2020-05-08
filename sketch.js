@@ -70,6 +70,7 @@ function preload(){
   txtLoading.style('text-align', 'center');
   txtLoading.style('margin-top', '7.5%');
   txtLoading.style('margin-bottom', '0%');
+  txtLoading.style('font', 'bold');
 
   //Loading bar
   barLoading = createDiv();
@@ -100,6 +101,7 @@ function audioLoaded(){
   storiesLoaded++;
   percentLoaded = storiesLoaded / numStories;
   progLoading.size(barLoading.width*percentLoaded);
+  print(storiesLoaded);
 //End audioLoaded
 }
 //----------------------------------------------------------------------------
