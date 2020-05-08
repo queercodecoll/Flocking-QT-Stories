@@ -11,8 +11,10 @@ body {
 .headerContainer {
   display:flex;
   flex-wrap: wrap;
-  margin: 1%;
+  margin-left: 1%;
+  margin-top: 1%;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 /* Add a background color to the top navigation */
@@ -28,23 +30,23 @@ body {
   .topnav a {
     float: right;
     display: block;
-    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    color: rgb(74, 74, 74);
+    font-size: 16px;
+    font-family: Helvetica;
   }
 
   /* Add a background on topnav links and the dropdown button on hover */
   .topnav a:hover, .dropdown:hover .dropbtn {
-    background-color: rgb(216, 216, 216);
-    color: black;
+    color: rgb(62, 105, 220);
   }
 
 /* Add an active class to highlight the current page */
   .topnav a.active {
-    background-color: rgb(62, 105, 220);
-    color: white;
+    color: rgb(62, 105, 220);
+    text-decoration: underline;
   }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -65,24 +67,24 @@ body {
 
     /* Style the dropdown button to fit inside the topnav */
     .dropdown .dropbtn {
-      font-size: 17px;
       border: none;
       outline: none;
-      color: black;
       padding: 14px 16px;
-      background-color: inherit;
-      font-family: inherit;
+      background-color: white;
+      color: rgb(74, 74, 74);
+      font-size: 16px;
+      font-family: Helvetica;
       margin: 0;
     }
 
     /* Style the dropdown content (hidden by default) */
     .dropdown-content {
-      margin-top: 48px;
+      margin-top: 51px;
       display: none;
       position: absolute;
-      background-color: rgb(246, 246, 246);
+      background-color: white;
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
       z-index: 1;
 
     }
@@ -90,7 +92,7 @@ body {
     /* Style the links inside the dropdown */
     .dropdown-content a {
       float: none;
-      color: black;
+      color: rgb(74, 74, 74);
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -99,8 +101,7 @@ body {
 
     /* Add a grey background to dropdown links on hover */
     .dropdown-content a:hover {
-      background-color: rgb(216, 216, 216);
-      color: black;
+      color: rgb(62, 105, 220);
     }
 
     /* Show the dropdown menu when the user moves the mouse over the dropdown button */
