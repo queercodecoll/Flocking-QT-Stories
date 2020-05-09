@@ -17,7 +17,7 @@ Description
     Flocking QT Stories is part of Dylan Paré’s dissertation in the Learning Sciences in the Werklund School of Education at the University of Calgary, Canada.
     It was initially developed during the Mind, Matter and Media Lab’s Paul D. Fleck artist residency in the Leighton Studios at the Banff Centre for Arts and Creativity in 2019. It has exhibited at the Banff Centre for Arts and Creativity, TELUS Spark Science Centre, and at DigiPlay, a public exhibit space at the University of Calgary Werklund School of Education.
 
-    The code was initially written in Processing in April 2019. In May 2020, it was re-written for p5.js and for display on the internet using GitHub and GitHub pages.
+    The code was initially written in Processing 3.5.4 in April 2019. In May 2020, it was re-written in p5.js 1.0.0 for display on the internet using GitHub and GitHub Pages.
 
 Authors and Acknowledgements
     Flocking QT Stories was designed by Dylan Paré, coded by Dylan Paré and John Craig, and received advisory support from Dr. Pratim Sengupta and Dr. Marie-Claire Shanahan of the Mind, Matter and Media Lab at the University of Calgary Werklund School of Education, Canada.
