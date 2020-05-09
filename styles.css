@@ -163,11 +163,12 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .UI_Container, .longTextContainer {
+  #UI_Container, #longTextContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 1%;}
+    margin: 1%;
+  }
 
   #UI_column1, #UI_column2 {
     width: 300px;
@@ -176,9 +177,11 @@ body {
     margin: 1.5%;}
 
   .longText {
-    max-width: 700px;
+    max-width: 600px;
     margin: 1.5%;
   }
+
+
   li {
     margin: 10px 0px 0px 10px;
   }
