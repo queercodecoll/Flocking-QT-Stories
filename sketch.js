@@ -99,8 +99,8 @@ function preload(){
 //Callback function for when audio is loaded during story constructor
 function audioLoaded(){
   storiesLoaded++;
-  percentLoaded = storiesLoaded / 13;
-  progLoading.size(barLoading.width*percentLoaded);
+  percentLoaded = storiesLoaded / numStories;
+  progLoading.style('width', (percentLoaded*100) + '%');
 //End audioLoaded
 }
 //----------------------------------------------------------------------------
