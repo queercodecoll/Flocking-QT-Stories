@@ -10,7 +10,7 @@ var institutions = []; //Container for all institutions
 let strStories = ["Anonymous","Dylan (They, Them)","eddy (they, them)",
                     "Gertie (She, Her)","Gertie (She, Her)_2","Gertie (She, Her)_3",
                     "Jo","Jo_2","Jo_3","John (He, Him)",
-                    "MC (She, Her)", "Pratim (He, Him)","Riley (She, Her)"];                                                                        //Stories are created and stored with boid
+                    "MC", "Pratim (He, Him)","Riley (She, Her)"];                                                                        //Stories are created and stored with boid
 let objStories = []; //Holds refs to the story objects. Loaded on Preload
 let activeStory; //The current selected/active story
 
