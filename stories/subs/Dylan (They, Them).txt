@@ -2,18 +2,27 @@ Dylan
 (They, Them)
 0000:I was in high school when the same-sex marriage debate in Canada was ramping up.
 0005:Being in a Catholic school in right-wing Alberta was not a great place to be queer.
-0010:We had a religion teacher who taught that the only kind of sex that was acceptable was between a man and a woman
+0010:We had a religion teacher who taught that the only kind of sex that was acceptable
+0014:was between a man and a woman
 0016:who were married and were having sex with the intention of reproduction,
 0020:and that all gay sex was a sin.
-0024:We had a school counsellor who reprimanded us for just saying the word “gay” in the hallways.
+0023:We had a school counsellor who reprimanded us
+0026:just for saying the word “gay” in the hallways.
 0028:And this was just the teachers. Homophobia was everywhere. At school. Amongst peers.
-0033:Even just walking down the street, where “fag” was yelled out of passing cars on occasion.
-0039:Government representatives also argued against queer lives and claimed they would use whatever powers they had to prevent queer people from having equal rights.
+0034:Even just walking down the street, where “fag” was yelled out of passing cars on occasion.
+0039:Government representatives also argued against queer lives
+0041:and claimed they would use whatever powers they had
+0044:to prevent queer people from having equal rights.
 0048:Everywhere I turned, people were saying that being queer was wrong, gross, and a sin.
 0054:As a queer kid growing up in that climate, it didn’t feel safe to be out.
 0058:But not being out didn’t protect me from experiencing homophobia anyways.
-0063:I worry about queer and trans youth today whose right to self-disclosure of their identity on their terms,
+0063:I worry about queer and trans youth today
+0065:whose right to self-disclosure of their identity on their terms,
 0069:their right to feel protected from homophobic and transphobic bullying in schools,
-0074:and their right to inclusive education is being threatened by right-wing governments in Canada.
-0079:I know what it’s like to grow up when your rights and the validity of your identity is a topic for public debate.
-0085:Not everyone survives. But queer and trans youth deserve to grow up in a society where they can thrive, not merely survive.
+0073:and their right to inclusive education
+0075:is being threatened by right-wing governments in Canada.
+0078:I know what it’s like to grow up when your rights
+0081:and the validity of your identity is a topic for public debate.
+0085:Not everyone survives.
+0087:But queer and trans youth deserve to grow up in a society where they can thrive,
+0091:not merely survive.

@@ -2,7 +2,8 @@ John
 (He, Him)
 0000:I was raised in a household that defined cutting the grass as work for me and my older brother,
 0006:while doing laundry was a job for my younger sister.
-0008:I often would question my parents on why?! and could never accept the answer that it was because she was a girl.
+0008:I often would question my parents on why?!
+0011:and could never accept the answer that it was because she was a girl.
 0015:Without an acceptable answer, and punishment for not performing my masculine duties,
 0019:the house was not a place for me to explore gender.
 0023:Outside of the house, my brother's friends, and even my own peers
@@ -18,9 +19,11 @@ John
 0069:It didn't stop after elementary school. It didn't stop after middle school.
 0073:The memory of me in a dress carried with my peers, and every chance I would be voluntold
 0078:to don a wig, a dress, and a higher pitched voice.
-082:It was around this time that I realized that I wasn't exploring gender on my terms.
+0082:It was around this time that I realized that I wasn't exploring gender on my terms.
 0086:Instead, I was just appeasing the masses because of how I was labelled.
 0090:And by doing so, I was making a mockery of gender play.
-0093:While in university, I came to start performing burlesque as a way to learn what it means to be masculine.
+0093:While in university, I came to start performing burlesque
+0097:as a way to learn what it means to be masculine.
 0100:However, what I also learned, was a way to explore gender beyond masculinity,
-0105:but in a way that I could be proud of and with an audience that could appreciate gender expression.
+0105:but in a way that I could be proud of
+0108:and with an audience that could appreciate gender expression.

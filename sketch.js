@@ -48,7 +48,7 @@ var storiesLoaded, percentLoaded, numStories;
 //----------------------------------------------------------------------------
 //Before showing page...
 function preload(){
-  soundFormats('m4a'); //List of available file formats
+  soundFormats('mp3'); //List of available file formats
   let tempStories = strStories;  //copy list of story names into a temp variable
   numStories = tempStories.length;
   storiesLoaded = 0;
@@ -61,7 +61,6 @@ function preload(){
   divLoading.style('justify-align', 'center');
   divLoading.style('align-items', 'center');
   divLoading.style('border', 'solid');
-  divLoading.style('box-shadow', '5px 10px 20px');
 
   //Loading Text
   txtLoading = createP("LOADING...");
@@ -70,7 +69,6 @@ function preload(){
   txtLoading.style('text-align', 'center');
   txtLoading.style('margin-top', '7.5%');
   txtLoading.style('margin-bottom', '0%');
-  txtLoading.style('font', 'bold');
 
   //Loading bar
   barLoading = createDiv();
@@ -101,7 +99,6 @@ function audioLoaded(){
   storiesLoaded++;
   percentLoaded = storiesLoaded / numStories;
   progLoading.size(barLoading.width*percentLoaded);
-  print(storiesLoaded);
 //End audioLoaded
 }
 //----------------------------------------------------------------------------

@@ -1,17 +1,26 @@
 Jo
 - Story 3
-0000:I was already working for, maybe, half a year and one of my colleague for a permanent installation came to me.
-0011:He really needed to start a work on the other side of Paris, where, like, an hour to an hour and a half to drive.
-0022:He needed to take his car, but he also needed a truck to come to bring all the stuff, and
-0028:I never drive a truck before. It was just like, "Have you ever done that?" I was just like, "No" and
-0035:he was, "Well, anyway, I really need you to drive this truck because I need to take my car. I'm living nearby this place.
+0000:I was already working for, maybe, half a year
+0005:and one of my colleague for a permanent installation came to me.
+0011:He really needed to start a work in the other side of Paris,
+017:where, like, an hour to an hour and a half to drive.
+0022:He needed to take his car, but he also needed a truck to come
+026:to bring all the stuff, and
+0028:I've never drive a truck before. It was just like,
+0031:"Have you ever done that?" I was just like, "No" and
+0033:he was, "Well, anyway, I really need you to drive this truck because
+0037:I need to take my car. I'm living nearby this place.
 0041:So, you will have to take this truck and come to me and we'll start the work together."
-0048:And I took this truck, and there was a really, like, okay that's the first time you do this thing. You're just doing it.
+0048:And I took this truck, and there was a really, like,
+0052:okay that's the first time you do this thing. You're just doing it.
 0057:You're going to go slowly. I mean, everyone learn that once.
-0062:And that was a funny experience because I realized that through all these months before, like
+0062:And that was a funny experience because
+0065:I realized that through all these months before, like
 0068:the internship that came after me were driving the truck way before me,
 0074:and no one ever tried to ask me to drive this truck before and they were just um..
 0083:there was many little things that feels more implicitly impossible for me to do um.. since..
-0093:until I've done it, and it was easy and no matter, like, I was a girl or a boy,
-0099:I could just do it and I think that's the main point of like a neutral gender education
-0108:or a neutral gender awareness because everyone can do what they want as long as they just like what they're doing
+0093:until I've done it, and it was easy and no matter I was, like, a girl or a boy,
+0100:I could just do it and I think that's the main point of like a neutral gender education
+0108:or a neutral gender awareness because
+0113:everyone can do whatever they want as long as they just like what they're doing
+0119:and they're just motivated for that.

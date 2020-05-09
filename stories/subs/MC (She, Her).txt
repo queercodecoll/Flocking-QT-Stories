@@ -9,23 +9,29 @@ MC
 0027:Mickey was a way better character anyway.
 0030:But nothing could have prepared me for the feeling of pride, relief and joy
 0035:when someone later casually asked my mom how old her little boy was.
-0039:It was a fairly inconsequential interaction that on another day maybe I wouldn’t have even noticed,
-0046:something that’s probably happened to many kids at some point or another and didn’t make much of an impression.
+0039:It was a fairly inconsequential interaction
+0042:that on another day maybe I wouldn’t have even noticed,
+0046:something that’s probably happened to many kids at some point or another
+0049:and didn’t make much of an impression.
 0052:But the feeling never left me.
 0054:It was like being transformed by Cinderella’s godmother
 0057:and magically given access to a world that was usually off limits,
 0061:to a way of being that I wasn’t allowed to have.
 0064:And it was something that I don’t remember feeling again until I did my first radio interview.
 0070:Those two experiences don’t seem like they should be connected.
-0075:Me, as a short-haired six-year-old in a scratchy polyester striped t-shirt and Mickey Mouse ears
+0075:Me, as a short-haired six-year-old
+0077:in a scratchy polyester striped t-shirt and Mickey Mouse ears
 0082:and me as a 30 year old sitting on the floor in my kitchen,
-0085:holding a cordless phone and talking to a student radio host thousands of kilometers away.
+0085:holding a cordless phone and talking to a student radio host
+0088:thousands of kilometers away.
 0091:But again I couldn’t ignore how it felt.
-0094:As I talked on the phone, for the live radio interview, my body melted away and I was just me:
+0094:As I talked on the phone, for the live radio interview,
+0097:my body melted away and I was just me:
 0101:the ideas I had and the words I wanted to say.
 0106:I thought of and felt nothing else,
 0109:no constant gaze questioning my female body,
 0112:no constant doubt from others that I was either doing science wrong or femaleness wrong.
 0119:I was just the person I always wanted to be.
 0122:This probably isn’t the reason that most people get into doing radio and podcasting
-0127:but, for me, it was a way of interacting with people that gave me something I’d never found anywhere else.
+0127:but, for me, it was a way of interacting with people
+0130:that gave me something I’d never found anywhere else.
