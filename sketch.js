@@ -61,6 +61,7 @@ function preload(){
   divLoading.style('justify-align', 'center');
   divLoading.style('align-items', 'center');
   divLoading.style('border', 'solid');
+  divLoading.style('box-shadow', '5px 10px 20px');
 
   //Loading Text
   txtLoading = createP("LOADING...");
@@ -69,6 +70,7 @@ function preload(){
   txtLoading.style('text-align', 'center');
   txtLoading.style('margin-top', '7.5%');
   txtLoading.style('margin-bottom', '0%');
+  txtLoading.style('font', 'bold');
 
   //Loading bar
   barLoading = createDiv();
@@ -97,7 +99,7 @@ function preload(){
 //Callback function for when audio is loaded during story constructor
 function audioLoaded(){
   storiesLoaded++;
-  percentLoaded = storiesLoaded / numStories;
+  percentLoaded = storiesLoaded / 13;
   progLoading.size(barLoading.width*percentLoaded);
 //End audioLoaded
 }
