@@ -3,9 +3,10 @@ body {
   width: 100%;
   font-family: Helvetica, sans-serif;
   font-style: normal;
-  font-weight: lighter;
+  font-weight: 200;
   font-size: 16px;
   margin: 0 auto;}
+
   #header {
     margin: 1%;}
   #content {overflow:auto;
@@ -151,13 +152,15 @@ body {
   h1{
     color: rgb(65, 105, 220);
     font-family: Arial Black;
+    font-weight: bold;
     text-align: center;
     margin-top: 0.1%;
     margin-bottom: 0.1%;}
   h3{
     color: black;
-    font-family: Arial;
+    font-family: Helvetica, sans-serif;
     font-size: 20px;
+    font-weight: bold;
     text-align: left;
     margin-top: 0;
     margin-bottom: 1%;
