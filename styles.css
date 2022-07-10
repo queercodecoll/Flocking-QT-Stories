@@ -6,7 +6,7 @@ body {
   #header {
     margin: 1%;}
   #content {overflow:auto;
-  background-color: rgb(216,216,216)}
+  background-color: rgb(256,256,256)}
 
 .headerContainer {
   display:flex;
