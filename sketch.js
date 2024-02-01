@@ -7,7 +7,7 @@ var institutions = []; //Container for all institutions
 //GLOBAL VARIABLES FOR STORIES
 //String array list of all the stories
 //These are used to create the story objects stored in non-normative boids
-let strStories = ["Anonymous","Dylan (They, Them)","eddy (they, them)",
+let strStories = ["Anonymous","Avery (They, Them)","eddy (they, them)",
                     "Gertie (She, Her)","Gertie (She, Her)_2","Gertie (She, Her)_3",
                     "Jo","Jo_2","Jo_3","John (He, Him)",
                     "MC", "Pratim (He, Him)","Riley (She, Her)"];                                                                        //Stories are created and stored with boid
